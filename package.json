@@ -49,6 +49,8 @@
     "stylelint-selector-bem-pattern": "^2.0.0"
   },
   "dependencies": {
+    "gulp-svgmin": "^2.2.0",
+    "postcss-inline-svg": "^4.1.0",
     "svg4everybody": "^2.1.9"
   },
   "husky": {

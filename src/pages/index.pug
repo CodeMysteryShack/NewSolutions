@@ -1,20 +1,104 @@
-extends ../pug/layout.pug
+//- extends ../pug/layout.pug
 
-block meta
-  title Главная
-  meta(name='description', content='')
+//- block meta
+//-   title Главная
+//-   meta(name='description', content='')
 
-//- block append head
-//-   link(rel='stylesheet', href='css/some.css')
+//- //- block append head
+//- //-   link(rel='stylesheet', href='css/some.css')
 
-block header
-  p Лого
+//- block header
+//-   p Лого
 
-block content
-  h1 Заголовок
+//- block content
+//-   h1 Заголовок
 
 //- block footer
 //-   p footer
 
 //- block append page-bottom
 //-   script(src='js/some.js')
+include ../pug/mixins.pug
+
+doctype html
+html(class='page  no-js', lang='ru')
+
+  head
+    meta(charset='utf-8')
+
+    block meta
+      title Home
+
+    block head
+      link(rel='stylesheet', href='css/style.css')
+      script.
+        document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
+
+  body
+    noscript У вас отключен JavaScript. Это пугает.
+
+    .page__inner
+      .page__content
+        header.header
+          .header__wrap
+            logo.logo
+              a.logo__link(href='/')
+                img(src='img/Logo.svg', alt='')
+            nav.nav
+              ul.main-nav
+                li.main-nav__item
+                  a.main-nav__link О компании
+                li.main-nav__item
+                  a.main-nav__link Реквизиты
+                li.main-nav__item
+                  a.main-nav__link Стоимость
+                li.main-nav__item
+                  a.main-nav__link Партнеры
+                li.main-nav__item
+                  a.main-nav__link Новости
+                li.main-nav__item
+                  a.main-nav__link Контакты
+              ul.project-nav
+                li.project-nav__item
+                  a.project-nav__link Дизайн-системы
+                li.project-nav__item
+                  a.project-nav__link Веб-сайты
+                li.project-nav__item
+                  a.project-nav__link Мобильные приложения
+                li.project-nav__item
+                  a.project-nav__link Банковские системы
+          select.lang-select
+            option.lang-select__item Русский
+            option.lang-select__item Английский
+
+        main
+          section.prog
+            h1.page__head Разработка программного обеспечения
+            p.page__text экстраординарные решения в области дизайна и разработки уникальных высокотехнологичных продуктов
+            p.page__sub-text в том числе — система автоматизации въезда и распознавания номеров
+            img.prog__img(src='img/PO.png')
+            a.details(href='#') Подробнее
+
+          section.sport-auto
+            h2.page__title.page__title--center Система автоматизации спортивных учреждений
+            p.page__subhead Систематизицация уровней данных
+            p.page__text Создание виртуального администратора позволяет сократить лишние рабочие места, минимизировать коррупцию и, тем самым, увеличить доход Вашего бизнеса.
+            a.detail(href='#') подробнее
+            img.sport-auto__img(src='img/sport_automat.png')
+          section.electric__line
+            h2.page__title Электронная система управления очередью
+            p.page__text Приступая к работе над проектом для «тутSPA», мы изучили внутренние процессы компании, её ключевые предложения, а также конкурентную нишу.
+            p.page__text Благодаря исследованиям, сделали вывод, что основной задачей для бренда является акцент на привлекающей внимание демонстрации своих услуг.
+            a.detail(href='#') подробнее
+
+
+
+
+
+      .page__footer-wrapper
+        block footer
+          p Подвал
+
+    block page-bottom
+      script(src='js/vendors.min.js')
+      script(src='js/script.min.js')
